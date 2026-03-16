@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Manrope", sans-serif;
+  --font-label: "Manrope", sans-serif;
+
+  --color-primary: #875200;
+  --color-primary-container: #d48c2e;
+  --color-primary-fixed: #ffddba;
+  --color-secondary: #755750;
+  --color-tertiary: #7c5730;
+  --color-tertiary-container: #c09367;
+  --color-surface: #fbf9f4;
+  --color-surface-container: #f0eee9;
+  --color-surface-container-low: #f5f3ee;
+  --color-surface-container-high: #eae8e3;
+  --color-surface-container-highest: #e4e2dd;
+  --color-on-surface: #1b1c19;
+  --color-on-surface-variant: #524436;
+  --color-outline: #857464;
+  --color-outline-variant: #d7c3b1;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.signature-gradient {
+  background: linear-gradient(135deg, #875200 0%, #d48c2e 100%);
+}
+
+.glass-header {
+  background: rgba(251, 249, 244, 0.8);
+  backdrop-filter: blur(20px);
+}
+
