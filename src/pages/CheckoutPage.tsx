@@ -23,8 +23,8 @@ export const CheckoutPage: React.FC = () => {
         <p className="text-on-surface-variant mb-12 max-w-md mx-auto">
           It seems you haven't added any liquid gold to your collection yet. Explore our catalog to find your perfect batch.
         </p>
-        <button 
-          onClick={() => navigate('/')}
+        <button
+          onClick={() => navigate('/catalog')}
           className="signature-gradient text-on-primary px-10 py-4 rounded-full font-bold shadow-lg shadow-primary/10 hover:scale-[1.02] transition-transform"
         >
           Explore Catalog
@@ -38,9 +38,9 @@ export const CheckoutPage: React.FC = () => {
   const total = totalPrice + shipping + tax;
 
   return (
-    <motion.div 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className="max-w-7xl mx-auto px-6 py-12"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -67,21 +67,21 @@ export const CheckoutPage: React.FC = () => {
                     </div>
                     <div className="mt-4 flex items-center justify-between">
                       <div className="flex items-center bg-surface-container rounded-full px-3 py-1 gap-4">
-                        <button 
-                          onClick={() => updateQuantity(item.id, Math.max(1, item.quantity - 1))}
+                        <button
+                          onClick={() => item.quantity === 1 ? removeFromCart(item.id) : updateQuantity(item.id, -1)}
                           className="text-primary hover:scale-110 transition-transform"
                         >
                           <Minus className="w-4 h-4" />
                         </button>
-                        <span className="text-sm font-semibold">{item.quantity}</span>
-                        <button 
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        <span className="text-sm font-semibold w-6 text-center">{item.quantity}</span>
+                        <button
+                          onClick={() => updateQuantity(item.id, 1)}
                           className="text-primary hover:scale-110 transition-transform"
                         >
                           <Plus className="w-4 h-4" />
                         </button>
                       </div>
-                      <button 
+                      <button
                         onClick={() => removeFromCart(item.id)}
                         className="text-on-surface-variant hover:text-red-500 transition-colors"
                       >
@@ -214,7 +214,7 @@ export const CheckoutPage: React.FC = () => {
                 </div>
               </div>
             </div>
-            <button 
+            <button
               onClick={handleConfirmPurchase}
               className="w-full signature-gradient text-on-primary py-5 rounded-full font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 group"
             >

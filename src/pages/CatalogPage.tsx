@@ -3,6 +3,7 @@ import { ArrowRight, Star } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
 import { PRODUCTS } from '../constants';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const CatalogPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Ghee');
@@ -62,9 +63,9 @@ export const CatalogPage: React.FC = () => {
             <p className="text-on-surface-variant max-w-md mb-8">
               Our Ghee is traditionally clarified for 12 hours, resulting in a nutty aroma and a smooth, granular texture that is unmatched.
             </p>
-            <a className="inline-flex items-center gap-2 font-label text-sm font-bold uppercase tracking-widest text-primary hover:gap-4 transition-all" href="#">
+            <Link className="inline-flex items-center gap-2 font-label text-sm font-bold uppercase tracking-widest text-primary hover:gap-4 transition-all" to="/about">
               Learn our process <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
           <div className="absolute right-0 top-0 h-full w-1/3 opacity-20 md:opacity-100">
             <img 

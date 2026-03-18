@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-headline: "Noto Serif", serif;
   --font-body: "Manrope", sans-serif;
   --font-label: "Manrope", sans-serif;
+  --font-decorative: "Cinzel Decorative", serif;
 
   --color-primary: #875200;
   --color-primary-container: #d48c2e;
@@ -44,5 +45,17 @@
 .glass-header {
   background: rgba(251, 249, 244, 0.8);
   backdrop-filter: blur(20px);
+}
+
+.village-gold-title {
+  font-family: "Cinzel Decorative", serif;
+  background: linear-gradient(135deg, #875200 0%, #d48c2e 50%, #875200 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, rgba(27,28,25,0.6) 60%, rgba(251,249,244,1) 100%);
 }
 
